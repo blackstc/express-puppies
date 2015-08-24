@@ -1,6 +1,5 @@
-var Puppy = require("../models/puppies");
-var puppyData = require("../models/puppies");
-var tempArray = puppyData.tempPuppyArray;
+var puppy = require("../models/puppies");
+var tempArray = puppy.tempPuppyArray;
 
 function handleAll() {
   return tempArray;
@@ -26,7 +25,7 @@ function handlePost(id, name, age) {
   if (pup.length > 0) {
     return {message: "That puppy already exists!"};
   } else {
-    var newPostPuppy = new Puppy(+id, name, +age);
+    var newPostPuppy = new puppy.Puppy(+id, name, +age);
     tempArray.push(newPostPuppy);
     return {message: "success", puppy: newPostPuppy};
   }
